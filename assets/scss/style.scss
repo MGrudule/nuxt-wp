@@ -3,7 +3,9 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
 
-
+body {
+  overflow-y: scroll;
+}
 
 $duration: 0.5s;
 $page-transition: ease-in;

@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div class="navbar navbar-light bg-white">
-      <b-nav >
+  <div class="overflow-hidden">
+    <div class="navbar navbar-light bg-white border-bottom">
+      <b-nav>
         <b-nav-item to="/">Home</b-nav-item>
         <b-nav-item to="/post">Post</b-nav-item>
       </b-nav>
@@ -12,15 +12,8 @@
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
