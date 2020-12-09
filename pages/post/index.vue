@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-light bg-secondary" style="min-height:100vh">
     <div class="container">
       <h1 class="title">Posts</h1>
       <div v-if="posts && posts.length > 0" class="list-group" >
@@ -13,6 +13,7 @@
 <script>
 import axios from 'axios'
 export default {
+    transition: 'back',
     head () {
     return {
       title: "Posts page",

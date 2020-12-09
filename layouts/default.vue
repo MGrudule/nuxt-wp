@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-secondary text-light" style="z-index:1000; min-height:100vh">
-    <div class="navbar navbar-light bg-light">
+  <div>
+    <div class="navbar navbar-light bg-white">
       <b-nav >
         <b-nav-item to="/">Home</b-nav-item>
         <b-nav-item to="/post">Post</b-nav-item>

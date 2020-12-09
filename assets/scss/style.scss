@@ -5,54 +5,54 @@
 
 
 
-$duration: 0.5s;
+$duration: 1s;
+$page-transition: ease-in;
 
 .transition {
   overflow: hidden;
 }
 
-.page,
-.page-back {
+.back,
+.forward {
 
   &-enter-active,
   &-leave-active {
     position: fixed;
     width: 100%;
-    background: $secondary;
     min-height: 100vh;
     top: 56px;
   }
 }
 
 // router view
-.page-enter-active {
-  transition: transform $duration ease-in-out;
+.back-enter-active {
+  transition: transform $duration $page-transition;
   z-index: 2;
   transform: translateX(100%);
 }
 
-.page-enter-to {
+.back-enter-to {
   z-index: 2;
   transform: translateX(0%);
 }
 
-.page-leave-active {
-  z-index: -1;
+.back-leave-active {
+  z-index: 1;
 }
 
-.page-leave-to {
-  z-index: -1;
+.back-leave-to {
+  z-index: 1;
 }
 
 // router view back
 
-.page-back-leave-active {
-  transition: transform $duration ease-in-out;
+.forward-leave-active {
+  transition: transform $duration $page-transition;
   z-index: 2;
   transform: translateX(0%);
 }
 
-.router-view-back-leave-to {
+.forward-leave-to {
   z-index: 2;
   transform: translateX(100%);
 }
