@@ -5,7 +5,7 @@
 
 
 
-$duration: 1s;
+$duration: 0.5s;
 $page-transition: ease-in;
 
 .transition {
@@ -13,7 +13,7 @@ $page-transition: ease-in;
 }
 
 .back,
-.forward {
+.back {
 
   &-enter-active,
   &-leave-active {
@@ -25,23 +25,52 @@ $page-transition: ease-in;
 }
 
 // router view
-.back-enter-active {
-  transition: transform $duration $page-transition;
-  z-index: 2;
-  transform: translateX(100%);
-}
-
-.back-enter-to {
-  z-index: 2;
-  transform: translateX(0%);
-}
-
 .back-leave-active {
+  transition: transform $duration $page-transition;
   z-index: 1;
+  transform: translateX(100%);
+
+  .container {
+    transition: opacity $duration/2 $page-transition;
+
+    opacity: 0
+  }
+
+  .before-bg {
+    transition: width $duration $page-transition;
+    width: 3vw;
+  }
+
 }
 
 .back-leave-to {
   z-index: 1;
+  transform: translateX(0%);
+
+  .before-bg {
+    transition: width $duration $page-transition;
+    width: 97vw;
+  }
+
+}
+
+.back-enter-active {
+  z-index: 2;
+
+  .container {
+
+    opacity: 1
+  }
+}
+
+.back-enter-to {
+  z-index: 2;
+
+  .container {
+    transition: opacity $duration/2 $page-transition 1s;
+
+    opacity: 0
+  }
 }
 
 // router view back

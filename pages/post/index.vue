@@ -1,5 +1,7 @@
 <template>
   <div class="text-light bg-secondary" style="min-height:100vh">
+        <nuxt-link to="/" class="before-bg bg-white position-absolute text-dark d-flex align-items-center justify-content-center" style="left:0; min-width:3rem; height:100%;"> ☀️ </nuxt-link>
+
     <div class="container">
       <h1 class="title">Posts</h1>
       <div v-if="posts && posts.length > 0" class="list-group" >

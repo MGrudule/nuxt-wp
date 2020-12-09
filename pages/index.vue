@@ -1,6 +1,6 @@
 <template>
   <div class="bg-light" style="min-height:100vh">
-    <nuxt-link to="/post" class="bg-secondary position-absolute text-light" style="right:0; width:3rem; height:100%;"> hello</nuxt-link>
+    <nuxt-link to="/post" class="before-bg bg-secondary position-absolute text-light d-flex align-items-center pl-3" style="right:0; min-width:3rem; height:100%;transform: translate3d(0);"> 🌕 </nuxt-link>
     <div class="container">
     <div>
       <Logo />
