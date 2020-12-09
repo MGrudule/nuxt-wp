@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div>
+    <div class="container">
     <div>
       <Logo />
       <h1 class="title">
@@ -9,6 +10,7 @@
         <h2 class="display-3">{{page.title}}</h2>
         <nuxt-content :document="page" />
       </div>
+    </div>
     </div>
   </div>
 </template>

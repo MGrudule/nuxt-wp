@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <div class="bg-secondary text-light" style="z-index:1000; min-height:100vh">
+    <div class="navbar navbar-light bg-light">
+      <b-nav >
+        <b-nav-item to="/">Home</b-nav-item>
+        <b-nav-item to="/post">Post</b-nav-item>
+      </b-nav>
+    </div>
     <Nuxt />
   </div>
 </template>

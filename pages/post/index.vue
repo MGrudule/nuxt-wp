@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div>
+  <div>
+    <div class="container">
       <h1 class="title">Posts</h1>
       <div v-if="posts && posts.length > 0" class="list-group" >
           <NuxtLink v-for="post in posts" :key="post.id" :to="`/post/${post.slug}`" class="list-group-item list-group-item-action"  v-text="post.title.rendered"/>

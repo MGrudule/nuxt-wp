@@ -50,6 +50,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
+    'bootstrap-vue/nuxt',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -60,7 +62,20 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
   env: {
     wpUrl: process.env.WP_URL || null
-  }
+  },
+  css: [
+    '~/assets/scss/style.scss'
+  ],
+  styleResources: {
+    scss: [
+      '~/assets/scss/_variables.scss',
+    ]
+  },
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false, // Or `bvCSS: false`
+  },
 }

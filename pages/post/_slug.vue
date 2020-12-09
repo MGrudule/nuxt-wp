@@ -1,10 +1,12 @@
 <template>
-  <section class="container">
+  <div>
+    <section class="container">
     <div>
       <h1 class="title" v-if="post.title" v-text="post.title.rendered"/>
       <span v-if="post.content" v-html="post.content.rendered"></span>
     </div>
-  </section>
+    </section>
+  </div>
 </template>
 <script>
 import axios from 'axios'
