@@ -10,15 +10,23 @@
 
     <div class="container pt-5">
       <h1 class="title">Posts</h1>
-      <div v-if="posts && posts.length > 0" class="list-group">
-        <NuxtLink
+
+      <div v-if="posts && posts.length > 0" class="row">
+        <!-- <NuxtLink
           v-for="post in posts"
           :key="post.id"
           :to="`/post/${post.slug}`"
           class="list-group-item list-group-item-action"
           v-text="post.title.rendered"
-        />
+        /> -->
+        <card-flip
+          class="col-12 col-md-6 col-lg-4 mb-4"
+          v-for="post in posts"
+          :card="post"
+          :key="post.id"
+        ></card-flip>
       </div>
+
       <div v-if="!api" v-text="warning" />
     </div>
   </div>
@@ -26,7 +34,9 @@
 
 <script>
 import axios from 'axios'
+import CardFlip from '~/components/CardFlip.vue'
 export default {
+  components: { CardFlip },
   transition: 'back',
   head() {
     return {
