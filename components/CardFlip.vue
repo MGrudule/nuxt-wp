@@ -5,7 +5,9 @@
         <div class="position-absolute h-100 w-100">
           <div class="flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front bg-light"></div>
+              <div class="flip-card-front bg-light text-primary">
+                {{ scrollTop }}
+              </div>
               <div class="flip-card-back bg-primary">
                 <h2>{{ card.title.rendered }}</h2>
               </div>
@@ -18,12 +20,19 @@
 </template>
 
 <script>
+import WindowInstanceMap from '~/plugins/WindowInstanceMap.js'
+
 export default {
   props: ['card'],
   data() {
     return {
       title: 'Posts page',
     }
+  },
+  computed: {
+    scrollTop() {
+      return WindowInstanceMap.scrollY
+    },
   },
 }
 </script>

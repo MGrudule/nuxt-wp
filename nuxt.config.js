@@ -82,6 +82,10 @@ export default {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: false, // Or `bvCSS: false`
   },
+  plugins: [{
+    src: '~/plugins/WindowInstanceMap',
+    ssr: false
+  }],
   loading: false
 
 }
