@@ -52,6 +52,10 @@ export default {
     '@nuxt/content',
     '@nuxtjs/style-resources',
     'bootstrap-vue/nuxt',
+    '@nuxtjs/strapi',
+    '@nuxtjs/markdownit'
+
+
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -83,9 +87,19 @@ export default {
     bootstrapVueCSS: false, // Or `bvCSS: false`
   },
   plugins: [{
-    src: '~/plugins/WindowInstanceMap',
-    ssr: false
-  }],
+      src: '~/plugins/WindowInstanceMap',
+      ssr: false
+    },
+    {
+      src: '~/plugins/preview.client'
+    }
+  ],
+  strapi: {
+    entities: ['events']
+  },
+  markdownit: {
+    runtime: true // Support `$md()`
+  },
   loading: false
 
 }

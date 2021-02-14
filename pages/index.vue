@@ -15,6 +15,15 @@
           <h2 class="display-3">{{ page.title }}</h2>
           <nuxt-content :document="page" />
         </div>
+        <div class="my-5">
+          <h2 class="display-3">Events</h2>
+          <a
+            v-for="event in events"
+            :key="event.slug"
+            :href="`/events/${event.slug}`"
+            v-html="event.title"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -23,11 +32,12 @@
 <script>
 export default {
   transition: 'forward',
-  async asyncData({ $content }) {
+  async asyncData({ $content, $strapi }) {
     const page = await $content('hello').fetch()
-
+    const events = await $strapi.$events.find()
     return {
       page,
+      events,
     }
   },
 }
